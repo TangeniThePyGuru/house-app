@@ -101,6 +101,10 @@ angular.module('myHouseAppApp')
           }]
         }
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'DashboardCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
