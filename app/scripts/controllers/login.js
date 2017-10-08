@@ -21,9 +21,9 @@ angular.module('myHouseAppApp')
       }
     });
 
-    
 
-    
+
+
 
       // Autenthication with password and email
       $scope.passwordLogin = function (email, pass) {
@@ -93,10 +93,10 @@ angular.module('myHouseAppApp')
         return f + str.substr(1);
       }
 
-    
+
 
     function redirect() {
-      $location.path('/account');
+      $location.path('/dashboard');
     }
 
     function showError(err) {
