@@ -71,7 +71,7 @@
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav links">
+                <ul class="nav navbar-nav links" ng-show-auth="">
                     <li role="presentation"><a href="#!/dashboard">Dashboard </a></li>
                     <li role="presentation"><a href="#!/events">Events </a></li>
                     <li role="presentation"><a href="#!/news">News </a></li>
@@ -103,8 +103,9 @@
   </div>
 
   <div class="footer">
-    <div class="container"><br>
-        <center><div class="prepend-8 span-20">Copyright &copy; 2017 HouseCoders</a></center>
+    <div class="container">
+      <p>Made with <span class="glyphicon glyphicon-heart"></span> House Coders</p>
+
     </div>
   </div>
 
@@ -172,6 +173,8 @@
         <script src="scripts/controllers/users.js"></script>
         <script src="scripts/controllers/user.js"></script>
         <script src="scripts/controllers/for-got-password.js"></script>
+        <script src="scripts/controllers/add-event.js"></script>
+        <script src="scripts/controllers/add-news.js"></script>
         <!-- endbuild -->
 </body>
 </html>

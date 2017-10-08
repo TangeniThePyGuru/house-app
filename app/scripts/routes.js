@@ -64,15 +64,15 @@ angular.module('myHouseAppApp')
 // before trying to access that route
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        resolve: {
-          "currentAuth": ["auth", function (auth) {
-            return auth.$waitForSignIn();
-          }]
-        }
-      })
+      // .when('/', {
+      //   templateUrl: 'views/main.html',
+      //   controller: 'MainCtrl',
+      //   resolve: {
+      //     "currentAuth": ["auth", function (auth) {
+      //       return auth.$waitForSignIn();
+      //     }]
+      //   }
+      // })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
@@ -103,50 +103,118 @@ angular.module('myHouseAppApp')
       })
       .when('/dashboard', {
         templateUrl: 'views/dashboard.html',
-        controller: 'DashboardCtrl'
+        controller: 'DashboardCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/approvals', {
         templateUrl: 'views/approvals.html',
-        controller: 'ApprovalsCtrl'
+        controller: 'ApprovalsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/events', {
         templateUrl: 'views/events.html',
-        controller: 'EventsCtrl'
+        controller: 'EventsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/groups', {
         templateUrl: 'views/groups.html',
-        controller: 'GroupsCtrl'
+        controller: 'GroupsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/group', {
         templateUrl: 'views/group.html',
-        controller: 'GroupCtrl'
+        controller: 'GroupCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/news', {
         templateUrl: 'views/news.html',
-        controller: 'NewsCtrl'
+        controller: 'NewsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/news-item', {
         templateUrl: 'views/news-item.html',
-        controller: 'NewsItemCtrl'
+        controller: 'NewsItemCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/non-monetary', {
         templateUrl: 'views/non-monetary.html',
-        controller: 'NonMonetaryCtrl'
+        controller: 'NonMonetaryCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/users', {
         templateUrl: 'views/users.html',
-        controller: 'UsersCtrl'
+        controller: 'UsersCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/user', {
         templateUrl: 'views/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/for-got-password', {
         templateUrl: 'views/for-got-password.html',
         controller: 'ForGotPasswordCtrl'
       })
+      .when('/add-event', {
+        templateUrl: 'views/add-event.html',
+        controller: 'AddEventCtrl'
+      })
+      .when('/add-news', {
+        templateUrl: 'views/add-news.html',
+        controller: 'AddNewsCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/dashboard'
       });
 
   }])
