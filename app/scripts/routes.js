@@ -205,6 +205,14 @@ angular.module('myHouseAppApp')
         templateUrl: 'views/for-got-password.html',
         controller: 'ForGotPasswordCtrl'
       })
+      .when('/add-event', {
+        templateUrl: 'views/add-event.html',
+        controller: 'AddEventCtrl'
+      })
+      .when('/add-news', {
+        templateUrl: 'views/add-news.html',
+        controller: 'AddNewsCtrl'
+      })
       .otherwise({
         redirectTo: '/dashboard'
       });
