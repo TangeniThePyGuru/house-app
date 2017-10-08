@@ -1,7 +1,9 @@
 {
   "name": "myhouseapp",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "generator-install": "^0.3.1"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^1.0.1",
