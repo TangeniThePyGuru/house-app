@@ -105,6 +105,46 @@ angular.module('myHouseAppApp')
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .when('/approvals', {
+        templateUrl: 'views/approvals.html',
+        controller: 'ApprovalsCtrl'
+      })
+      .when('/events', {
+        templateUrl: 'views/events.html',
+        controller: 'EventsCtrl'
+      })
+      .when('/groups', {
+        templateUrl: 'views/groups.html',
+        controller: 'GroupsCtrl'
+      })
+      .when('/group', {
+        templateUrl: 'views/group.html',
+        controller: 'GroupCtrl'
+      })
+      .when('/news', {
+        templateUrl: 'views/news.html',
+        controller: 'NewsCtrl'
+      })
+      .when('/news-item', {
+        templateUrl: 'views/news-item.html',
+        controller: 'NewsItemCtrl'
+      })
+      .when('/non-monetary', {
+        templateUrl: 'views/non-monetary.html',
+        controller: 'NonMonetaryCtrl'
+      })
+      .when('/users', {
+        templateUrl: 'views/users.html',
+        controller: 'UsersCtrl'
+      })
+      .when('/user', {
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl'
+      })
+      .when('/for-got-password', {
+        templateUrl: 'views/for-got-password.html',
+        controller: 'ForGotPasswordCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

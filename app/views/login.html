@@ -1,7 +1,4 @@
-
-<h2>Login Page</h2>
-
-<form role="form">
+<!-- <form role="form">
   <p class="form-group">
     <label for="loginEmail"> Email</label>
     <input id="loginEmail" required name="email" type="email" ng-model="email" class="form-control" />
@@ -22,6 +19,20 @@
             ng-click="createAccount(email, pass, confirm)">Create Account</button>
     <button  class="btn btn-default" ng-cloak ng-show="createMode" ng-click="createMode = false"> Cancel </button>
   </p>
-</form>
+</form> -->
+<div class="login-card"><img src="assets/img/avatar_2x.png" class="profile-img-card">
+            <p class="profile-name-card">Standard Bank Buy-A-Brick</p>
+            <form class="form-signin"><span class="reauth-email"> </span>
+                <input name="email" ng-model="email" class="form-control" type="email" required="" placeholder="Email address" autofocus="" id="loginEmail">
+                <input name="pass" ng-model="pass" class="form-control" type="password" required="" placeholder="Password" id="loginPass">
+                <div class="checkbox">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox">Remember me</label>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg btn-signin" ng-click="passwordLogin(email, pass)" type="submit">Sign in</button>
+            </form><a href="#!/for-got-password" class="forgot-password">Forgot your password?</a></div>
+    </div>
 <p ng-show="err" class="bg-danger">{{err}}</p>
 
