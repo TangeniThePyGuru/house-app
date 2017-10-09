@@ -213,6 +213,10 @@ angular.module('myHouseAppApp')
         templateUrl: 'views/add-news.html',
         controller: 'AddNewsCtrl'
       })
+      .when('/update-news', {
+        templateUrl: 'views/update-news.html',
+        controller: 'UpdateNewsCtrl'
+      })
       .otherwise({
         redirectTo: '/dashboard'
       });
