@@ -61,7 +61,7 @@ angular.module('myHouseAppApp')
       } catch (error) {
         // console.log(error)
       }
-
+    // add news
     $scope.add = function () {
       newsFactory.add({
         title: $scope.title,
