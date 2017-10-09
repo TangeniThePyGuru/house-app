@@ -16,5 +16,6 @@ angular.module('myHouseAppApp', [
     'ngSanitize',
     'ngTouch',
     'firebase',
+    'angular.filter',
     'firebase.Auth'
   ]);
