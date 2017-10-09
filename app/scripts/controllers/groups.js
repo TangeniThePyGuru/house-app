@@ -8,7 +8,7 @@
  * Controller of the myHouseAppApp
  */
 angular.module('myHouseAppApp')
-  .controller('GroupsCtrl', ["auth", "$scope", "$location", function (auth, $scope, $location) {
+  .controller('GroupsCtrl', ["auth", "$scope", "$location", "groupFactory", function (auth, $scope, $location, groupFactory ) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -22,4 +22,10 @@ angular.module('myHouseAppApp')
       $scope.authData = null;
     };
 
-  }]);
+    $scope.groups = groupFactory.GROUPS;
+
+  }])
+
+  .run(function (groupFactory) {
+      groupFactory.get();
+  })
