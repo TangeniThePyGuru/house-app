@@ -8,16 +8,16 @@
                             <tr>
                                 <th>Name </th>
                                 <th>Number of People in Group</th>
-                                <th>Group Points</th>
-                                <th>Creator by</th>
+                                <th>Target</th>
+                                <th>Created by</th>
                                 <th>Time created</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><a href="group.html">Youth-group </a></td>
-                                <td>2 </td>
-                                <td>10,000 </td>
+                            <tr ng-repeat="group in groups">
+                                <td><a href="#!/group/{{group.$id}}">{{group.groupname}} </a></td>
+                                <td> {{ 1 }} </td>
+                                <td>{{group.grouptarget}} </td>
                                 <td><a href="user.html">John Doe</a></td>
                                 <td>20/2/2017 18:32:23</td>
                             </tr>
