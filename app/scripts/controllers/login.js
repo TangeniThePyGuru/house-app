@@ -17,7 +17,7 @@ angular.module('myHouseAppApp')
         console.log(" logged: " + authData.uid);
         $scope.logoutBtn = true;
         $scope.loginBtn = false;
-        $location.path('/account');
+        $location.path('/dashboard');
       }
     });
 
