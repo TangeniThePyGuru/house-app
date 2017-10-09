@@ -8,12 +8,8 @@
  * Controller of the myHouseAppApp
  */
 angular.module('myHouseAppApp')
-  .controller('NewsCtrl', ["auth", "$scope", "$location", function (auth, $scope, $location) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('NewsCtrl', ["auth", "$scope", "$location","newsFactory", function (auth, $scope, $location, newsFactory) {
+
 
     $scope.logout = function () {
       auth.$signOut();
@@ -22,4 +18,21 @@ angular.module('myHouseAppApp')
       $scope.authData = null;
     };
 
-  }]);
+    // get all the news
+    $scope.news = newsFactory.NEWS;
+
+    $scope.getNewsItem = function(){
+      return newsFactory.getNewsItem()
+    }
+
+    $scope.delete = function (id) {
+      newsFactory.delete(id).then(function (ref) {
+        console.log("success");
+      })
+    }
+
+  }])
+// get all the news when the app loads
+  .run(function (newsFactory) {
+      newsFactory.get();
+  })
