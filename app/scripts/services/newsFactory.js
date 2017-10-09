@@ -18,7 +18,7 @@ angular.module('myHouseAppApp')
     return {
       NEWS: [],
 
-      ref: firebase.database().ref('news'),
+      ref: firebase.database().ref('news/'),
 
       get: function () {
         this.NEWS = $firebaseArray(this.ref);
@@ -31,7 +31,7 @@ angular.module('myHouseAppApp')
       ,
       delete: function (id) {
         console.log(id);
-        return $firebaseObject(id).$remove();
+        return $firebaseObject(this.ref + id).$remove();
       }
       ,
       update: function (object) {
