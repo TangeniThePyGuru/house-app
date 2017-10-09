@@ -1,7 +1,7 @@
 <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">News </h3></div>
-            <div class="panel-body"><span> </span><a class="btn btn-success btn-sm" role="button" href="add-news.html">create news</a>
+            <div class="panel-body"><span> </span><a class="btn btn-success btn-sm" role="button" href="#!/add-news">create news</a>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
@@ -13,14 +13,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr ng-repeat="news in news">
                                 <td>1 </td>
-                                <td><a href="news-item.html">Buy-a-brick Hackathon</a></td>
+                                <td><a href="#!/news-item">{{news.title}}</a></td>
                                 <td>20/09/2017 </td>
                                 <td>
                                     <div class="btn-group" role="group">
                                         <button class="btn btn-primary" type="button">Update </button>
-                                        <button class="btn btn-danger" type="button">Delete </button>
+                                        <button class="btn btn-danger" ng-click="delete(news.$id)" type="button">Delete </button>
                                     </div>
                                 </td>
                             </tr>
