@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js">
+
 <head>
   <meta charset="utf-8">
   <title>HouseCoders</title>
@@ -25,15 +26,16 @@
   <link rel="stylesheet" href="assets/css/Pretty-Header.css">
 
 </head>
+
 <body ng-app="myHouseAppApp">
-<!--[if lt IE 7]>
+  <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
   your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!-- Add your site or application content here -->
-<div class="header" ng-controller="MainCtrl" ng-cloak="">
-   <!-- <div class="navbar navbar-default" role="navigation">
+  <!-- Add your site or application content here -->
+  <div class="header" ng-controller="MainCtrl" ng-cloak="">
+    <!-- <div class="navbar navbar-default" role="navigation">
     <div class="container">
       <div class="navbar-header">
 
@@ -66,40 +68,114 @@
 
 
     <nav ng-show-auth="" class="navbar navbar-inverse navbar-static-top custom-header">
-        <div class="container">
-            <div class="navbar-header"><a class="navbar-brand navbar-link" href="#!/dashboard">StandardBank Buy-a-Brick </a>
-                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav links" ng-show-auth="">
-                    <li role="presentation"><a href="#!/dashboard">Dashboard </a></li>
-                    <li role="presentation"><a href="#!/events">Events </a></li>
-                    <li role="presentation"><a href="#!/news">News </a></li>
-                    <li role="presentation"><a href="#!/non-monetary">Contributions </a></li>
-                    <li role="presentation"><a href="#!/approvals" class="custom-navbar"> Approvals<span class="badge">5</span></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right" ng-show-auth="">
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" > <span class="caret"></span><img src="assets/img/avatar.jpg" class="dropdown-image"></a>
-                        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-                            <li role="presentation"><a href="#!/settings">Settings </a></li>
-                            <li role="presentation"><a href="#!/payments">Payments </a></li>
-                            <li role="presentation"><a href="#!/account">Account </a></li>
-                            <li role="presentation" class="active"><a href="#" ng-show-auth="" ng-click="logout()">Logout </a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="navbar-header"><a class="navbar-brand navbar-link" href="#!/dashboard">StandardBank Buy-a-Brick </a>
+          <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav links" ng-show-auth="">
+            <li role="presentation"><a href="#!/dashboard">Dashboard </a></li>
+            <li role="presentation"><a href="#!/events">Events </a></li>
+            <li role="presentation"><a href="#!/news">News </a></li>
+            <li role="presentation"><a href="#!/non-monetary">Contributions </a></li>
+            <li role="presentation"><a href="#!/approvals" class="custom-navbar"> Approvals<span class="badge">5</span></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right" ng-show-auth="">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="caret"></span><img src="assets/img/avatar.jpg" class="dropdown-image"></a>
+              <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                <li role="presentation"><a href="#!/settings">Settings </a></li>
+                <li role="presentation"><a href="#!/payments">Payments </a></li>
+                <li role="presentation"><a href="#!/account">Account </a></li>
+                <li role="presentation" class="active"><a href="#" ng-show-auth="" ng-click="logout()">Logout </a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
 
 
 
   </div>
 
+
   <div class="container">
 
-    <div ng-view=""></div>
+    <div class="col-md-3 col-sm-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">Menu </h3>
+        </div>
+        <div class="panel-body">
+          <div class="panel-group" role="tablist" aria-multiselectable="true" id="accordion-1">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="true" href="#accordion-1 .item-1">Events </a></h4>
+              </div>
+              <div class="panel-collapse collapse in item-1" role="tabpanel">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/events">View Events</a></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/add-event">Create Event</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-2">News </a></h4>
+              </div>
+              <div class="panel-collapse collapse item-2" role="tabpanel">
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/news">View News</a></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/add-news">Create News</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-3">Groups </a></h4>
+              </div>
+              <div class="panel-collapse collapse item-3" role="tabpanel">
+                <div class="panel-body">
+                  <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/groups">Groups</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-4">Approvals </a></h4>
+              </div>
+              <div class="panel-collapse collapse item-4" role="tabpanel">
+                <div class="panel-body">
+                  <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/approvals">View Approvals</a></div>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab">
+                <h4 class="panel-title"><a role="button" data-toggle="collapse" data-parent="#accordion-1" aria-expanded="false" href="#accordion-1 .item-5">Users </a></h4>
+              </div>
+              <div class="panel-collapse collapse item-5" role="tabpanel">
+                <div class="panel-body">
+                  <div class="col-md-12"><a class="btn btn-default btn-xs" role="button" href="#!/users">View Users</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div ng-view="" class="col-md-9 col-sm-9"></div>
 
   </div>
 
@@ -115,8 +191,8 @@
   <script>
     !function (A, n, g, u, l, a, r) {
       A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-          (A[l].q = A[l].q || []).push(arguments)
-        }, A[l].l = +new Date, a = n.createElement(g),
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
         r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
     }(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
@@ -153,35 +229,36 @@
     var rootRef = firebase.database().ref();
   </script>
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts\controllers\chat.js"></script>
-        <script src="scripts\filters\reverse.js"></script>
-        <script src="scripts/angularfire/auth.js"></script>
-        <script src="scripts\controllers\login.js"></script>
-        <script src="scripts\controllers\account.js"></script>
-        <script src="scripts/directives/ngShowAuth.js"></script>
-        <script src="scripts/directives/ngHideAuth.js"></script>
-        <script src="scripts\routes.js"></script>
-        <script src="scripts/controllers/dashboard.js"></script>
-        <script src="scripts/controllers/approvals.js"></script>
-        <script src="scripts/controllers/events.js"></script>
-        <script src="scripts/controllers/groups.js"></script>
-        <script src="scripts/controllers/group.js"></script>
-        <script src="scripts/controllers/news.js"></script>
-        <script src="scripts/controllers/news-item.js"></script>
-        <script src="scripts/controllers/non-monetary.js"></script>
-        <script src="scripts/controllers/users.js"></script>
-        <script src="scripts/controllers/user.js"></script>
-        <script src="scripts/controllers/for-got-password.js"></script>
-        <script src="scripts/controllers/add-event.js"></script>
-        <script src="scripts/controllers/add-news.js"></script>
-        <script src="scripts/services/newsFactory.js"></script>
-        <script src="scripts/controllers/update-news.js"></script>
-        <script src="scripts/services/functions.js"></script>
-        <script src="scripts/services/groupfactory.js"></script>
-        <script src="scripts/services/approvalsfactory.js"></script>
-        <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <script src="scripts\controllers\chat.js"></script>
+  <script src="scripts\filters\reverse.js"></script>
+  <script src="scripts/angularfire/auth.js"></script>
+  <script src="scripts\controllers\login.js"></script>
+  <script src="scripts\controllers\account.js"></script>
+  <script src="scripts/directives/ngShowAuth.js"></script>
+  <script src="scripts/directives/ngHideAuth.js"></script>
+  <script src="scripts\routes.js"></script>
+  <script src="scripts/controllers/dashboard.js"></script>
+  <script src="scripts/controllers/approvals.js"></script>
+  <script src="scripts/controllers/events.js"></script>
+  <script src="scripts/controllers/groups.js"></script>
+  <script src="scripts/controllers/group.js"></script>
+  <script src="scripts/controllers/news.js"></script>
+  <script src="scripts/controllers/news-item.js"></script>
+  <script src="scripts/controllers/non-monetary.js"></script>
+  <script src="scripts/controllers/users.js"></script>
+  <script src="scripts/controllers/user.js"></script>
+  <script src="scripts/controllers/for-got-password.js"></script>
+  <script src="scripts/controllers/add-event.js"></script>
+  <script src="scripts/controllers/add-news.js"></script>
+  <script src="scripts/services/newsFactory.js"></script>
+  <script src="scripts/controllers/update-news.js"></script>
+  <script src="scripts/services/functions.js"></script>
+  <script src="scripts/services/groupfactory.js"></script>
+  <script src="scripts/services/approvalsfactory.js"></script>
+  <!-- endbuild -->
 </body>
+
 </html>
