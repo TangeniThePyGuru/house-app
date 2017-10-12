@@ -17,5 +17,6 @@ angular.module('myHouseAppApp', [
     'ngTouch',
     'firebase',
     'angular.filter',
-    'firebase.Auth'
+    'firebase.Auth',
+    'ui.bootstrap'
   ]);
