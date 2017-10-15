@@ -203,19 +203,53 @@ angular.module('myHouseAppApp')
       })
       .when('/for-got-password', {
         templateUrl: 'views/for-got-password.html',
-        controller: 'ForGotPasswordCtrl'
+        controller: 'ForGotPasswordCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/add-event', {
         templateUrl: 'views/add-event.html',
-        controller: 'AddEventCtrl'
+        controller: 'AddEventCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/add-news', {
         templateUrl: 'views/add-news.html',
-        controller: 'AddNewsCtrl'
+        controller: 'AddNewsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .when('/update-news/:id', {
         templateUrl: 'views/update-news.html',
-        controller: 'UpdateNewsCtrl'
+        controller: 'UpdateNewsCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
+      })
+      .when('/update-event/:id', {
+        templateUrl: 'views/update-event.html',
+        controller: 'UpdateEventCtrl',
+        resolve: {
+          "currentAuth": ["auth", function (auth) {
+            // returns a promisse so the resolve waits for it to complete
+            return auth.$requireSignIn();
+          }]
+        }
       })
       .otherwise({
         redirectTo: '/dashboard'
