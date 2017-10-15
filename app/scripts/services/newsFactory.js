@@ -35,8 +35,8 @@ angular.module('myHouseAppApp')
       }
       ,
       update: function (object) {
-        var news = $firebaseObject(this.ref.child($routeParams.$id));
-        return news.$save(object);
+        // var news = $firebaseObject(this.ref.child(object.$id));
+        return object.$save();
       }
       ,
       add: function (object) {
