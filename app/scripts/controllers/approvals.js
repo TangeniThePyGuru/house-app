@@ -27,14 +27,14 @@ angular.module('myHouseAppApp')
     //   allApprovals.push(item);
     // });
 
-    angular.allApprovals.forEach(function(approval) {
-      if(approval.status == 'pending'){
-        $scope.PendingApproval.push(approval)
-      }
-      else{
-        $scope.Approved.push(approval)
-      }
-    });
+    // angular.allApprovals.forEach(function(approval) {
+    //   if(approval.status == 'pending'){
+    //     $scope.PendingApproval.push(approval)
+    //   }
+    //   else{
+    //     $scope.Approved.push(approval)
+    //   }
+    // });
 
   }])
 
