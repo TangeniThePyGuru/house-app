@@ -213,7 +213,7 @@ angular.module('myHouseAppApp')
         templateUrl: 'views/add-news.html',
         controller: 'AddNewsCtrl'
       })
-      .when('/update-news', {
+      .when('/update-news/:id', {
         templateUrl: 'views/update-news.html',
         controller: 'UpdateNewsCtrl'
       })
