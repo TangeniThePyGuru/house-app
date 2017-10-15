@@ -26,8 +26,10 @@ angular.module('myHouseAppApp')
     }
 
     $scope.delete = function (id) {
-      newsFactory.delete(id).then(function (ref) {
+      return newsFactory.delete(id).then(function (ref) {
         console.log("success");
+      }, function(error){
+        console.log('Error: '+error);
       })
     }
 
