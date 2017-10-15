@@ -8,12 +8,7 @@
  * Controller of the myHouseAppApp
  */
 angular.module('myHouseAppApp')
-  .controller('UpdateNewsCtrl', ["auth", "$scope", "$location", function (auth, $scope, $location) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('UpdateNewsCtrl', ["auth", "$scope", "$location", "newsFactory", "$routeParams", function (auth, $scope, $location, newsFactory, $routeParams) {
 
     $scope.logout = function () {
       auth.$signOut();
@@ -21,5 +16,17 @@ angular.module('myHouseAppApp')
       $location.path('/login');
       $scope.authData = null;
     };
+
+    console.log(newsFactory.getItem($routeParams.id));
+
+    $scope.news = newsFactory.getItem($routeParams.id);
+
+    $scope.update = function () {
+      newsFactory.update($scope.news).then(function (ref) {
+        console.log('success');
+      }, function (error) {
+        console.log('error: '+error);
+      })
+    }
 
   }]);
