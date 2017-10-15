@@ -26,18 +26,16 @@ angular.module('myHouseAppApp')
       }
       ,
       getItem: function (id) {
-        return $firebaseArray(new firebase(this.ref + id))
+        return $firebaseObject(this.ref.child(id))
       }
       ,
       delete: function (id) {
-        // console.log($firebaseObject(this.ref.child(id)));
         // deletes a node
-        var obj = $firebaseObject(this.ref.child(id));
-        return obj.$remove();
+        return $firebaseObject(this.ref.child(id)).$remove();
       }
       ,
       update: function (object) {
-        var news = $firebaseObject(new firebase(this.ref + $routeParams.$id));
+        var news = $firebaseObject(this.ref.child($routeParams.$id));
         return news.$save(object);
       }
       ,
