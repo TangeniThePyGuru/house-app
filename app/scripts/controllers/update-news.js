@@ -8,7 +8,7 @@
  * Controller of the myHouseAppApp
  */
 angular.module('myHouseAppApp')
-  .controller('UpdateNewsCtrl', ["auth", "$scope", "$location", "newsFactory", "$routeParams", function (auth, $scope, $location, newsFactory, $routeParams) {
+  .controller('UpdateNewsCtrl', ["auth", "$scope", "$location", "newsFactory", "$routeParams", "$timeout", function (auth, $scope, $location, newsFactory, $routeParams, $timeout) {
 
     $scope.logout = function () {
       auth.$signOut();
@@ -19,12 +19,19 @@ angular.module('myHouseAppApp')
 
     console.log(newsFactory.getItem($routeParams.id));
 
+    $scope.success = false;
+    $scope.notsuccess = false;
     $scope.news = newsFactory.getItem($routeParams.id);
 
     $scope.update = function () {
       newsFactory.update($scope.news).then(function (ref) {
+        $scope.success = true;
+        $timeout(function () {
+          $scope.success = false
+        }, 3000)
         console.log('success: '+ref);
       }, function (error) {
+        $scope.notsuccess = true
         console.log('error: '+error);
       })
     }
