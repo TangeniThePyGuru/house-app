@@ -23,7 +23,7 @@ angular.module('myHouseAppApp')
 
     $scope.update = function () {
       newsFactory.update($scope.news).then(function (ref) {
-        console.log('success');
+        console.log('success: '+ref);
       }, function (error) {
         console.log('error: '+error);
       })
