@@ -9,11 +9,11 @@
     <form name="update_news" class="bootstrap-form-with-validation">
       <div class="form-group">
         <label class="control-label" for="title">Title: </label>
-        <input class="form-control" type="text" name="title" ng-model="title" id="text-input">
+        <input class="form-control" type="text" name="title" ng-model="news.title" id="text-input">
       </div>
       <div class="form-group">
         <label class="control-label" for="description">Desciption: </label>
-        <textarea class="form-control" name="description" ng-model="description" id="textarea-input"></textarea>
+        <textarea class="form-control" name="description" ng-model="news.description" id="textarea-input"></textarea>
       </div>
       <div class="form-group">
         <div class="progress" style="margin-bottom: 5px">
@@ -24,7 +24,7 @@
       </div>
       <div class="form-group"></div>
       <div class="btn-group">
-        <button class="btn btn-primary" ng-click="update()">Create Event</button><button class="btn btn-success" ng-click="clear()" type="reset">Clear</button>
+        <button class="btn btn-primary" ng-click="update()">Update News</button><button class="btn btn-success" ng-click="clear()" type="reset">Clear</button>
       </div>
     </form>
   </div>
