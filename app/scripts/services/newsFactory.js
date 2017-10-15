@@ -30,8 +30,10 @@ angular.module('myHouseAppApp')
       }
       ,
       delete: function (id) {
-        console.log(id);
-        return $firebaseObject(this.ref + id).$remove();
+        // console.log($firebaseObject(this.ref.child(id)));
+        // deletes a node
+        var obj = $firebaseObject(this.ref.child(id));
+        return obj.$remove();
       }
       ,
       update: function (object) {
@@ -40,6 +42,7 @@ angular.module('myHouseAppApp')
       }
       ,
       add: function (object) {
+        // add news item
         return $firebaseArray(this.ref).$add(object);
       }
 
