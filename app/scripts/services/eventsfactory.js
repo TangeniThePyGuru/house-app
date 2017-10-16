@@ -48,4 +48,8 @@ angular.module('myHouseAppApp')
 
 
     };
-  });
+  })
+
+  .run(function (eventsFactory) {
+    eventsFactory.get();
+  })
