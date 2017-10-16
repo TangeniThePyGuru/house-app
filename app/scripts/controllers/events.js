@@ -8,7 +8,7 @@
  * Controller of the myHouseAppApp
  */
 angular.module('myHouseAppApp')
-  .controller('EventsCtrl', ["auth", "$scope", "$location", function (auth, $scope, $location) {
+  .controller('EventsCtrl', ["auth", "$scope", "$location", "eventsFactory", function (auth, $scope, $location, eventsFactory) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -21,5 +21,15 @@ angular.module('myHouseAppApp')
       $location.path('/login');
       $scope.authData = null;
     };
+
+    $scope.events = eventsFactory.EVENTS;
+
+    $scope.delete = function (id) {
+      eventsFactory.delete(id).then(function (ref) {
+        console.log("deleted: "+ref)
+      }, function (error) {
+        console.log("error: "+error);
+      })
+    }
 
   }]);
