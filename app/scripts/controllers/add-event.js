@@ -26,14 +26,14 @@ angular.module('myHouseAppApp')
     $scope.notsuccess = false;
 
     $scope.add = function () {
-      console.log($scope.starting_date + " -> "+ $scope.starting_time)
+      console.log($scope.event.starting_date.toDateString() + " -> "+ $scope.event.starting_time.toTimeString())
       eventsFactory.add({
-        title : $scope.title,
-        starting_date : $scope.starting_date,
-        starting_time: $scope.starting_time,
-        ending_date : $scope.ending_date,
-        ending_time: $scope.ending_time,
-        description: $scope.description
+        title : $scope.event.title,
+        starting_date : $scope.event.starting_date.toDateString(),
+        starting_time: $scope.event.starting_time.toTimeString(),
+        ending_date : $scope.event.ending_date.toDateString(),
+        ending_time: $scope.event.ending_time.toTimeString(),
+        description: $scope.event.description
       }).then(function (ref) {
         console.log("success: "+ref)
         $scope.success = true;
