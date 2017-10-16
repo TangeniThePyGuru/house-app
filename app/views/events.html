@@ -14,15 +14,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr ng-repeat="event in events">
                                 <td>1 </td>
-                                <td><a href="#!/event">Buy-a-brick Hackathon</a></td>
-                                <td>6/10/2017 17:30</td>
-                                <td>11/10/2017 20:30</td>
+                                <td><a href="#!/event">{{event.title}}</a></td>
+                                <td>{{event.starting_date}} {{event.starting_time}}</td>
+                                <td>{{event.ending_date}} {{event.ending_time}}</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <button class="btn btn-primary btn-sm" type="button">update </button>
-                                        <button class="btn btn-danger btn-sm" type="button">Delete </button>
+                                        <a href="#!/update-event/{{event.$id}}" class="btn btn-primary btn-sm" type="button">update </a>
+                                        <button ng-click="delete(event.$id)" class="btn btn-danger btn-sm" type="button">Delete </button>
                                     </div>
                                 </td>
                             </tr>
