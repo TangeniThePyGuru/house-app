@@ -14,27 +14,41 @@
         <label class="control-label" for="title">Title: </label>
         <input class="form-control" type="text" ng-model="title" name="title" id="text-input">
       </div>
-      <div class="col-md-3">
-        <div class="form-group">
+      <div class="col-md-4">
+        <div class="form-group" ng-controller="DatepickerCtrl">
           <label class="control-label" for="start-date">Starting Date:</label>
-          <input class="form-control" type="date" ng-model="starting_date" name="start-date">
+          <!-- <input class="form-control" type="date" ng-model="starting_date" name="start-date"> -->
+          <!-- <uib-datepicker ng-model="starting_date" datepicker-options="options"></uib-datepicker> -->
+          <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="starting_date" is-open="popup1.opened" datepicker-options="dateOptions"
+              ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          </p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <div class="form-group">
-          <label class="control-label" for="start-time">Starting Time:</label>
+          <label class="control-label" for="start-time">Time:</label>
           <input class="form-control" type="time" ng-model="starting_time" name="start-time">
         </div>
       </div>
-      <div class="col-md-3">
-        <div class="form-group">
+      <div class="col-md-4">
+        <div class="form-group" ng-controller="DatepickerCtrl">
           <label class="control-label" for="end-date">Ending Date:</label>
-          <input class="form-control" type="date" ng-model="ending_date" name="end-date">
+           <p class="input-group">
+            <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="ending_date" is-open="popup1.opened" datepicker-options="dateOptions"
+              ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+            <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+          </p>
         </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-2">
         <div class="form-group">
-          <label class="control-label" for="email-input">Ending time:</label>
+          <label class="control-label" for="email-input">Time:</label>
           <input class="form-control" type="time" ng-model="ending_time" name="end-time">
         </div>
       </div>
